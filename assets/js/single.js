@@ -19,10 +19,14 @@ var getRepoIssues = function(repo) {
 }
 
 var displayIssues = function(issues) {
+    if (issues.length === 0) {
+        issueContainerEl.textContent = "This repo has no open issues! :D";
+        return;
+    }
     for (var i = 0; i < issues.length; i++) {
         //create a link to element to take users to the issue on github
         var issueEl = document.createElement("a");
-        issueEl.classlist = "list-item flex-row justify-space-between align-center";
+        issueEl.classList = "list-item flex-row justify-space-between align-center";
         issueEl.setAttribute("href", issues[i].html_url);
         issueEl.setAttribute("target", "_blank");
         
@@ -50,4 +54,4 @@ var displayIssues = function(issues) {
     }
 };
 
-getRepoIssues("facebook/react");
+getRepoIssues("cdehek/taskinator");
