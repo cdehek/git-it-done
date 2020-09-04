@@ -7,7 +7,7 @@ var response = fetch("https://api.github.com/users/octocat/repos").then(function
     response.json().then(function(data) {
         console.log(data);
     });
-});
+// });
 console.log(response);
 
 var getUserRepos = function(user) {
